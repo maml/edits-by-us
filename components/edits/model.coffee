@@ -7,7 +7,7 @@ module.exports = class Edit extends Base
     EditStore
       .where('userId', userId)
       .where('_id', editId).exec (err, edit) ->
-        return err if err?
+        return cb err if err?
 
         if isEmpty edit then cb() else cb null, (new Edit edit[0])
 
