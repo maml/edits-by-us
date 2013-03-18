@@ -8,7 +8,7 @@ Edit = require "#{ APP_ROOT }/components/edits/datastore"
 console.log 'Seeding database...'
 
 deleteUsers = (cb) ->
-  User.remove().exec (err, count) ->
+  User.remove (err, count) ->
     cb err if err?
     console.log "Removed #{count} records from User table"
     cb null
@@ -30,7 +30,7 @@ users = (cb) ->
     async.each dudes, save, cb
 
 deleteEdits = (cb) ->
-  Edit.remove().exec (err, count) ->
+  Edit.remove (err, count) ->
     cb err if err?
     console.log "Removed #{count} records from Edit table"
     cb null
