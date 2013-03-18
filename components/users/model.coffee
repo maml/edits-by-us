@@ -22,10 +22,10 @@ module.exports = class User extends Base
   save: (cb) =>
     {password} = (attributes = @attributes)
 
-    bcrypt.hash password, 10, (err, hash) ->
+    bcrypt.hash password, 10, (err, hashedPassword) ->
       return cb err if err?
 
-      user = extend (whitelist attributes), { hashedPassword: hash }
+      user = extend (whitelist attributes), { hashedPassword }
       (new UserStore user).save cb
 
   whitelist = (attributes) ->
