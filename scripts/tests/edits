@@ -6,9 +6,10 @@ echo
 curl -d '{
   "edit": {
     "userId": "123138ur2jd238j",
+    "authorId": "13u92hrir9238h9",
     "original": "Matt",
     "modified": "The Dude",
-    "accepted": false
+    "permalink": "http://domain.com/some-blog-post"
   }
 }' -H 'content-type:application/json' "http://localhost:3000/edits"
 
