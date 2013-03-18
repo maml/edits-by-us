@@ -1,4 +1,5 @@
-{APP_ROOT} = process.env
+{APP_ROOT}   = process.env
+{isFunction} = require 'underscore'
 
 Path = require 'path'
 app  = do require "#{ APP_ROOT }/core/lib/app"
@@ -12,8 +13,14 @@ namespace = (namespace, func) ->
   for verb in ['get', 'post', 'put', 'delete']
     routeMethods[verb] = do (verb) ->
       (path, cb) ->
-        path = Path.normalize "/#{ namespace }/#{ path }"
-        app[verb] path, cb
+        fullPath = "/#{ namespace }"
+
+        if isFunction path
+          cb = path
+        else
+          fullPath = Path.normalize "#{ fullPath }/#{ path }"
+
+        app[verb] fullPath, cb
 
   func(routeMethods)
 

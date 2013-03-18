@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "Creating Promise... Response:"
+echo
+
+curl -d '{
+  "edit": {
+    "userId": "123138ur2jd238j",
+    "original": "Matt",
+    "modified": "The Dude",
+    "accepted": false
+  }
+}' -H 'content-type:application/json' "http://localhost:3000/edits"
+
+echo
+echo

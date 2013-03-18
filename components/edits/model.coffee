@@ -3,13 +3,12 @@ Base      = require "#{ process.env.APP_ROOT }/core/lib/models/base"
 EditStore = require './datastore'
 
 module.exports = class Edit extends Base
-  @findByUserIdAndId: (userId, editId, cb) ->
-    EditStore
-      .where('userId', userId)
-      .where('_id', editId).exec (err, edit) ->
-        return cb err if err?
+  @findById: (id, cb) ->
+    EditStore.find({ _id: id }).exec (err, edit) ->
+      return cb err if err?
+      return cb() if isEmpty edit
 
-        if isEmpty edit then cb() else cb null, (new Edit edit[0])
+      cb null, (new Edit edit[0])
 
   constructor: (@attributes={}) ->
 

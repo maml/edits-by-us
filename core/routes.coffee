@@ -11,7 +11,8 @@ Edits = requireController 'edits'
 
 namespace 'users', ({ get, post }) ->
   get '/:id', Users.show
-  get '/:userId/edits/:id', Edits.show
+  post Users.create
 
-  post '/', Users.create
-  post '/:userId/edits', Edits.create
+namespace 'edits', ({ get, post }) ->
+  get '/:id', Edits.show
+  post Edits.create
