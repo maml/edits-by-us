@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "Creating Promise... Response:"
+echo
+
+curl -d '{
+  "user": {
+    "email": "page@rage.com",
+    "firstName": "Page",
+    "lastName": "McConnell",
+    "password": "password"
+  }
+}' -H 'content-type:application/json' "http://localhost:3000/users"
+
+echo
+echo
