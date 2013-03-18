@@ -1,15 +1,15 @@
 module.exports = class Edit
-  constructor: (@model) ->
+  constructor: (@edit) ->
 
   toHash: ->
     {
-      id        : @model.get '_id'
-      userId    : @model.get 'userId'
-      authorId  : @model.get 'authorId'
-      original  : @model.get 'original'
-      modified  : @model.get 'modified'
-      accepted  : @model.get 'accepted'
-      rejected  : @model.get 'rejected'
-      createdAt : @model.get 'createdAt'
-      permalink : @model.get 'permalink'
+      id        : @edit.get '_id'
+      userId    : @edit.get 'userId'
+      authorId  : @edit.get 'authorId'
+      original  : @edit.get 'original'
+      modified  : @edit.get 'modified'
+      accepted  : @edit.get 'accepted'
+      rejected  : @edit.get 'rejected'
+      createdAt : @edit.get 'createdAt'
+      permalink : @edit.get 'permalink'
     }
