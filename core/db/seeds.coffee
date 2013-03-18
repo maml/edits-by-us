@@ -60,5 +60,5 @@ async.series [
 ], (err) ->
   throw err if err?
 
-  console.log "Cleared DB"
+  console.log "Seeded DB"
   process.exit 0
