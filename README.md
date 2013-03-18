@@ -1,4 +1,8 @@
-edits-by-us
+Edits By Us
 ===========
 
-crowd-sourced editing of blog posts
+Crowd-based copy editing.
+
+[@mattloseke](http://www.twitter.com/mattloseke)
+<br />
+[@benjreinhart](https://twitter.com/benjreinhart)
